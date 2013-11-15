@@ -22,13 +22,13 @@ https://github.com/milliondreams/hive/
 
 on branch cas-support-cql. Clone this and build:
 
-$ git clone -b cas-support-cql git@github.com:milliondreams/hive.git
-$ cd hive/cassandra-handler
-$ mvn install
+    $ git clone -b cas-support-cql git@github.com:milliondreams/hive.git
+    $ cd hive/cassandra-handler
+    $ mvn install
 
 Then you can build cassowary:
 
-$ mvn package
+    $ mvn package
 
 Installation
 ============
@@ -47,15 +47,15 @@ Usage
 
 Launch your Shark shell with shark/bin/shark. Then add the cassowary jar to the classloader:
 
-shark> add jar /path/to/cassowary/target/cassowary-0.1-SNAPSHOT.jar;
+    shark> add jar /path/to/cassowary/target/cassowary-0.1-SNAPSHOT.jar;
 
 Now you can create an external table referencing your Cassandra data e.g.:
 
-CREATE EXTERNAL TABLE users(username string, email string, `location` string, last_visited bigint)
-STORED BY 'com.wentnet.cassowary.storagehandler.SSTableStorageHandler'
-WITH SERDEPROPERTIES ("cassandra.host" = "192.168.0.25", "cassandra.sstable.rate_mb_s" = "10", "cassandra.yaml.location" = "/opt/cassandra/conf/cassandra.yaml")
-TBLPROPERTIES ("cassandra.cf.name" = "users", "cassandra.ks.name" = "ks");
+    CREATE EXTERNAL TABLE users(username string, email string, `location` string, last_visited bigint)
+    STORED BY 'com.wentnet.cassowary.storagehandler.SSTableStorageHandler'
+    WITH SERDEPROPERTIES ("cassandra.host" = "192.168.0.25", "cassandra.sstable.rate_mb_s" = "10", "cassandra.yaml.location" = "/opt/cassandra/conf/cassandra.yaml")
+    TBLPROPERTIES ("cassandra.cf.name" = "users", "cassandra.ks.name" = "ks");
 
 and run queries:
 
-shark> select count(*) from users;
+    shark> select count(*) from users;
