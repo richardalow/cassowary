@@ -33,14 +33,9 @@ Then you can build cassowary:
 Installation
 ============
 
-You need Cassandra 1.2.x, Spark 0.7.x and Shark 0.7.x. To install Spark and Shark, follow
+You need Cassandra 1.2.x, Spark 0.8.x and Shark 0.8.x. To install Spark and Shark, follow
 
 https://github.com/amplab/shark/wiki/Running-Shark-on-a-Cluster
-
-Spark comes with an old JNA version that is not compatible with Cassowary. Remove it from
-spark/lib_managed/jna-* and install jna-3.2.7 from
-
-http://download.java.net/maven/2/net/java/dev/jna/jna/3.2.7/jna-3.2.7.jar
 
 Usage
 =====
